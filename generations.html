@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generations - Family Tree</title>
+    <meta name="description" content="Explore family members organized by generations">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/generations.css">
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="twinkling"></div>
+    
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-sitemap"></i>
+                <span>Family Tree</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="generations.html" class="nav-link active">Generations</a></li>
+                <li><a href="branches.html" class="nav-link">Family Heads</a></li>
+                <li><a href="search.html" class="nav-link">Search</a></li>
+                <li><a href="statistics.html" class="nav-link">Statistics</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title">
+                    <span class="glitch" data-text="Generations">Generations</span>
+                </h1>
+                <p class="page-subtitle">Explore our family heritage through different generations</p>
+                <div class="generation-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">5</div>
+                        <div class="stat-label">Generations</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">421</div>
+                        <div class="stat-label">Total Members</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="generation-controls">
+            <div class="container">
+                <div class="controls-wrapper">
+                    <div class="generation-selector" id="generationSelector">
+                        <!-- Dynamic generation buttons will be created here -->
+                    </div>
+                    <div class="view-options">
+                        <button class="view-btn active" data-view="grid">
+                            <i class="fas fa-th"></i>
+                            <span>Grid</span>
+                        </button>
+                        <button class="view-btn" data-view="tree">
+                            <i class="fas fa-sitemap"></i>
+                            <span>Tree</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="generation-content">
+            <div class="container">
+                <div class="generation-info" id="generationInfo">
+                    <!-- Dynamic generation info will be displayed here -->
+                </div>
+                <div class="members-container" id="membersContainer">
+                    <!-- Dynamic members will be displayed here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-sitemap"></i>
+                        <span>Family Tree</span>
+                    </div>
+                    <p>Preserving our heritage for future generations</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="branches.html">Family Heads</a></li>
+                        <li><a href="search.html">Search</a></li>
+                        <li><a href="statistics.html">Statistics</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Family Tree. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/utils.js"></script>
+    <script src="assets/js/generations.js"></script>
+</body>
+</html>

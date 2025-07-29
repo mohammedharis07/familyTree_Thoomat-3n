@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family Tree - Interactive Heritage Explorer</title>
+    <meta name="description" content="Explore our family heritage through an interactive, futuristic family tree with 421 members across 10 branches">
+    <meta name="keywords" content="family tree, genealogy, heritage, family history">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&display=swap" as="style">
+    <link rel="preload" href="assets/css/main.css" as="style">
+    
+    <!-- Stylesheets -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <i class="fas fa-sitemap"></i>
+            </div>
+            <div class="loading-text">Loading Family Tree...</div>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Animated Background -->
+    <div class="stars"></div>
+    <div class="twinkling"></div>
+    <div class="clouds"></div>
+    
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-sitemap"></i>
+                <span>Family Tree</span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="generations.html" class="nav-link">Generations</a></li>
+                <li><a href="branches.html" class="nav-link">Family Heads</a></li>
+                <li><a href="search.html" class="nav-link">Search</a></li>
+                <li><a href="statistics.html" class="nav-link">Statistics</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="glitch" data-text="Family Heritage">Family Heritage</span>
+                    </h1>
+                    <p class="hero-subtitle">Discover the interconnected legacy of our family across generations, spanning continents and professions</p>
+                    <div class="hero-stats">
+                        <div class="stat-item" data-count="421">
+                            <div class="stat-number">0</div>
+                            <div class="stat-label">Total Members</div>
+                        </div>
+                        <div class="stat-item" data-count="10">
+                            <div class="stat-number">0</div>
+                            <div class="stat-label">Family Branches</div>
+                        </div>
+                        <div class="stat-item" data-count="15">
+                            <div class="stat-number">0</div>
+                            <div class="stat-label">Countries</div>
+                        </div>
+                        <div class="stat-item" data-count="5">
+                            <div class="stat-number">0</div>
+                            <div class="stat-label">Generations</div>
+                        </div>
+                    </div>
+                    <div class="hero-actions">
+                        <a href="generations.html" class="btn-primary">
+                            <span>Explore Generations</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="search.html" class="btn-secondary">
+                            <span>Search Family</span>
+                            <i class="fas fa-search"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="tree-container">
+                        <div class="tree-visualization" id="treeVisualization">
+                            <!-- Dynamic tree will be generated here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features" id="features">
+            <div class="container">
+                <h2 class="section-title">Explore Your Heritage</h2>
+                <div class="features-grid">
+                    <div class="feature-card" data-feature="generations">
+                        <div class="feature-icon">
+                            <i class="fas fa-layer-group"></i>
+                        </div>
+                        <h3>Generation Explorer</h3>
+                        <p>Navigate through different generations and discover family connections across time periods</p>
+                        <div class="feature-stats">
+                            <span>5 Generations</span>
+                            <span>421 Members</span>
+                        </div>
+                        <a href="generations.html" class="feature-link">
+                            <span>Explore</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="feature-card" data-feature="branches">
+                        <div class="feature-icon">
+                            <i class="fas fa-code-branch"></i>
+                        </div>
+                        <h3>Family Branches</h3>
+                        <p>Explore individual family branches organized by family heads and their unique stories</p>
+                        <div class="feature-stats">
+                            <span>10 Branches</span>
+                            <span>Global Reach</span>
+                        </div>
+                        <a href="branches.html" class="feature-link">
+                            <span>Discover</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="feature-card" data-feature="search">
+                        <div class="feature-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3>Smart Search</h3>
+                        <p>Find any family member instantly with advanced search and filtering capabilities</p>
+                        <div class="feature-stats">
+                            <span>Real-time</span>
+                            <span>Multi-filter</span>
+                        </div>
+                        <a href="search.html" class="feature-link">
+                            <span>Search</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="feature-card" data-feature="statistics">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <h3>Family Analytics</h3>
+                        <p>Comprehensive statistics and insights about family distribution and achievements</p>
+                        <div class="feature-stats">
+                            <span>Visual Charts</span>
+                            <span>Insights</span>
+                        </div>
+                        <a href="statistics.html" class="feature-link">
+                            <span>Analyze</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Family Overview -->
+        <section class="family-overview" id="familyOverview">
+            <div class="container">
+                <h2 class="section-title">Family Branches Overview</h2>
+                <div class="branches-preview" id="branchesPreview">
+                    <!-- Dynamic content will be loaded here -->
+                </div>
+                <div class="overview-actions">
+                    <a href="branches.html" class="btn-primary">View All Branches</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recent Updates -->
+        <section class="recent-updates" id="recentUpdates">
+            <div class="container">
+                <h2 class="section-title">Recent Updates</h2>
+                <div class="updates-grid">
+                    <div class="update-card">
+                        <div class="update-icon">
+                            <i class="fas fa-plus-circle"></i>
+                        </div>
+                        <div class="update-content">
+                            <h4>New Members Added</h4>
+                            <p>Latest family members have been added to the database with complete information</p>
+                            <span class="update-date">Updated recently</span>
+                        </div>
+                    </div>
+                    <div class="update-card">
+                        <div class="update-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="update-content">
+                            <h4>Mobile Optimization</h4>
+                            <p>Enhanced mobile experience with improved navigation and touch interactions</p>
+                            <span class="update-date">Latest version</span>
+                        </div>
+                    </div>
+                    <div class="update-card">
+                        <div class="update-icon">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                        <div class="update-content">
+                            <h4>Advanced Search</h4>
+                            <p>New search filters and real-time suggestions for better family member discovery</p>
+                            <span class="update-date">New feature</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-sitemap"></i>
+                        <span>Family Tree</span>
+                    </div>
+                    <p>Preserving our heritage and connecting generations through technology</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="generations.html">Generations</a></li>
+                        <li><a href="branches.html">Family Heads</a></li>
+                        <li><a href="search.html">Search</a></li>
+                        <li><a href="statistics.html">Statistics</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Family Stats</h4>
+                    <ul>
+                        <li>Total Members: 421</li>
+                        <li>Family Branches: 10</li>
+                        <li>Countries: 15+</li>
+                        <li>Generations: 5</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> info@familytree.com</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Global Family Network</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Family Tree. All rights reserved. | Built with ❤️ for our family</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/utils.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search - Family Tree</title>
+    <meta name="description" content="Search and find family members instantly">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/search.css">
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="twinkling"></div>
+    
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-sitemap"></i>
+                <span>Family Tree</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="generations.html" class="nav-link">Generations</a></li>
+                <li><a href="branches.html" class="nav-link">Family Heads</a></li>
+                <li><a href="search.html" class="nav-link active">Search</a></li>
+                <li><a href="statistics.html" class="nav-link">Statistics</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="search-header">
+            <div class="container">
+                <h1 class="page-title">
+                    <span class="glitch" data-text="Search Family">Search Family</span>
+                </h1>
+                <p class="page-subtitle">Find any family member instantly with our advanced search</p>
+            </div>
+        </section>
+
+        <section class="search-section">
+            <div class="container">
+                <div class="search-container">
+                    <div class="search-box">
+                        <div class="search-input-wrapper">
+                            <i class="fas fa-search search-icon"></i>
+                            <input type="text" id="searchInput" placeholder="Search by name, profession, qualification, or location..." autocomplete="off">
+                            <button class="clear-btn" id="clearBtn" style="display: none;">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        <div class="search-filters">
+                            <select id="branchFilter">
+                                <option value="">All Branches</option>
+                            </select>
+                            <select id="professionFilter">
+                                <option value="">All Professions</option>
+                            </select>
+                            <select id="generationFilter">
+                                <option value="">All Generations</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="search-stats">
+                        <div class="stat-item">
+                            <span class="stat-number" id="totalResults">421</span>
+                            <span class="stat-label">Total Members</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" id="filteredResults">0</span>
+                            <span class="stat-label">Search Results</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="results-section">
+            <div class="container">
+                <div class="results-header" id="resultsHeader" style="display: none;">
+                    <h2>Search Results</h2>
+                    <div class="results-count">
+                        <span id="resultsCount">0</span> members found
+                    </div>
+                </div>
+                
+                <div class="results-grid" id="resultsGrid">
+                    <!-- Search results will be displayed here -->
+                </div>
+                
+                <div class="no-results" id="noResults" style="display: none;">
+                    <div class="no-results-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>No Results Found</h3>
+                    <p>Try adjusting your search terms or filters</p>
+                </div>
+                
+                <div class="search-suggestions" id="searchSuggestions">
+                    <h3>Popular Searches</h3>
+                    <div class="suggestions-grid" id="suggestionsGrid">
+                        <!-- Dynamic suggestions will be created here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-sitemap"></i>
+                        <span>Family Tree</span>
+                    </div>
+                    <p>Preserving our heritage for future generations</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="generations.html">Generations</a></li>
+                        <li><a href="branches.html">Family Heads</a></li>
+                        <li><a href="statistics.html">Statistics</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Family Tree. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/utils.js"></script>
+    <script src="assets/js/search.js"></script>
+</body>
+</html>

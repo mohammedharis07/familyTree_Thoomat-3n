@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistics - Family Tree</title>
+    <meta name="description" content="Family statistics and analytics">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/statistics.css">
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="twinkling"></div>
+    
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-sitemap"></i>
+                <span>Family Tree</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="generations.html" class="nav-link">Generations</a></li>
+                <li><a href="branches.html" class="nav-link">Family Heads</a></li>
+                <li><a href="search.html" class="nav-link">Search</a></li>
+                <li><a href="statistics.html" class="nav-link active">Statistics</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title">
+                    <span class="glitch" data-text="Family Analytics">Family Analytics</span>
+                </h1>
+                <p class="page-subtitle">Comprehensive insights into our family structure and achievements</p>
+            </div>
+        </section>
+
+        <section class="stats-overview">
+            <div class="container">
+                <div class="stats-grid" id="statsGrid">
+                    <!-- Dynamic stats will be created here -->
+                </div>
+            </div>
+        </section>
+
+        <section class="charts-section">
+            <div class="container">
+                <div class="charts-grid">
+                    <div class="chart-card">
+                        <h3>Branch Distribution</h3>
+                        <div class="chart-container">
+                            <canvas id="branchChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-card">
+                        <h3>Professional Distribution</h3>
+                        <div class="chart-container">
+                            <canvas id="professionChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-card">
+                        <h3>Geographic Distribution</h3>
+                        <div class="chart-container">
+                            <canvas id="locationChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-card">
+                        <h3>Generation Growth</h3>
+                        <div class="chart-container">
+                            <canvas id="generationChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-sitemap"></i>
+                        <span>Family Tree</span>
+                    </div>
+                    <p>Preserving our heritage for future generations</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="generations.html">Generations</a></li>
+                        <li><a href="branches.html">Family Heads</a></li>
+                        <li><a href="search.html">Search</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Family Tree. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/utils.js"></script>
+    <script src="assets/js/statistics.js"></script>
+</body>
+</html>
