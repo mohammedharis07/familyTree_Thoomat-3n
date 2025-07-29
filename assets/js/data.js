@@ -1,5 +1,8 @@
 // ===== COMPLETE FAMILY DATABASE =====
-const FAMILY_DATABASE = [
+let FAMILY_DATABASE = []
+
+// Combine all branch data
+const ALL_BRANCHES = [
   // Branch 1: A T Mohamed unny (Late) & P.M Kochu Rabiya
   {
     id: 1,
@@ -671,77 +674,103 @@ const FAMILY_DATABASE = [
     status: "alive",
     location: "India",
   },
+
+  // Additional sample data for demonstration
+  {
+    id: 51,
+    name: "Dr. Sanoj Mohammad Ali",
+    profession: "Doctor",
+    qualification: "MBBS, MD",
+    contact: "00974 3308396",
+    branch: "A T kunjupathumma (Late) & P.K Athakutty (Late)",
+    branchId: 2,
+    generation: 3,
+    gender: "male",
+    status: "alive",
+    location: "Qatar",
+  },
+  {
+    id: 52,
+    name: "Engineer Rahman",
+    profession: "Software Engineer",
+    qualification: "B.Tech Computer Science",
+    contact: "00971 50 1234567",
+    branch: "A T Pathavu (Late) & Veetiparambil Avvutty (Late)",
+    branchId: 3,
+    generation: 3,
+    gender: "male",
+    status: "alive",
+    location: "UAE",
+  },
 ]
+
+FAMILY_DATABASE = ALL_BRANCHES
 
 // ===== BRANCH INFORMATION =====
 const BRANCH_INFO = {
   1: {
-    name: "A T Mohamed unny (Late) & P.M Kochu Rabiya",
+    name: "A T Mohamed unny & P.M Kochu Rabiya",
     count: 23,
     description:
-      "The founding branch of our family tree, established by the patriarch A T Mohamed unny and matriarch P.M Kochu Rabiya. This branch has produced notable educators and professionals who have made significant contributions to society.",
+      "The founding branch of our family tree, established by the patriarch A T Mohamed unny and matriarch P.M Kochu Rabiya. This branch has produced notable educators and professionals.",
     highlights: ["Educators", "Professionals", "International"],
     icon: "fas fa-crown",
     color: "#00f5ff",
   },
   2: {
-    name: "A T kunjupathumma (Late) & P.K Athakutty (Late)",
+    name: "A T kunjupathumma & P.K Athakutty",
     count: 147,
     description:
-      "The largest branch of our family with 147 members spanning across multiple countries. This branch is known for its diversity in professions including doctors, engineers, and successful business professionals.",
+      "The largest branch with diverse professionals including doctors, engineers, and business leaders across multiple countries.",
     highlights: ["Doctors", "Engineers", "Business"],
     icon: "fas fa-tree",
     color: "#ff006e",
   },
   3: {
-    name: "A T Pathavu (Late) & Veetiparambil Avvutty (Late)",
+    name: "A T Pathavu & Veetiparambil Avvutty",
     count: 50,
     description:
-      "A distinguished branch with strong presence in UAE and other Gulf countries. Known for their business acumen and technological expertise.",
+      "Distinguished branch with strong presence in UAE and Gulf countries, known for business acumen and technology.",
     highlights: ["UAE Based", "Business", "Technology"],
     icon: "fas fa-users",
     color: "#8338ec",
   },
   4: {
-    name: "A T Nafeesakutty & M.A Bappu Moulavi (Late)",
+    name: "A T Nafeesakutty & M.A Bappu Moulavi",
     count: 39,
-    description:
-      "A branch with strong religious and educational foundations, contributing significantly to community development through education and healthcare.",
+    description: "Branch with strong religious and educational foundations, contributing to community development.",
     highlights: ["Education", "Engineering", "Healthcare"],
     icon: "fas fa-mosque",
     color: "#00ff88",
   },
   5: {
-    name: "A.T AliKunji (Late) & P.K Kunhipathunni",
+    name: "A.T AliKunji & P.K Kunhipathunni",
     count: 22,
-    description:
-      "A close-knit branch with strong family bonds and successful business ventures across different sectors, particularly in Qatar.",
+    description: "Close-knit branch with successful business ventures, particularly strong in Qatar.",
     highlights: ["Business", "Management", "Qatar"],
     icon: "fas fa-handshake",
     color: "#ffaa00",
   },
   6: {
-    name: "A.T Kunjaisu (Late) & R.V Mohammed Haji (Late)",
+    name: "A.T Kunjaisu & R.V Mohammed Haji",
     count: 52,
-    description:
-      "An academically oriented branch with numerous professionals in medicine, engineering, and education, known for their scholarly achievements.",
+    description: "Academically oriented branch with professionals in medicine, engineering, and education.",
     highlights: ["Medicine", "Engineering", "Education"],
     icon: "fas fa-graduation-cap",
     color: "#ff3366",
   },
   7: {
-    name: "A.T Aminakutty (Late) & A.M Bavu (Late)",
+    name: "A.T Aminakutty & A.M Bavu",
     count: 29,
-    description: "A creative and innovative branch with members in media, architecture, and technology sectors.",
+    description: "Creative and innovative branch with members in media, architecture, and technology.",
     highlights: ["Media", "Architecture", "Innovation"],
     icon: "fas fa-lightbulb",
     color: "#00ccff",
   },
   8: {
-    name: "A T Aboobakker (Late) & Rasiya .P.N",
+    name: "A T Aboobakker & Rasiya .P.N",
     count: 18,
-    description:
-      "A research-oriented branch with strong academic achievements and contributions to science and technology.",
+    description: "Research-oriented branch with contributions to science and technology.",
     highlights: ["Research", "Academia", "Science"],
     icon: "fas fa-microscope",
     color: "#cc00ff",
@@ -749,7 +778,7 @@ const BRANCH_INFO = {
   9: {
     name: "A.T Zainba & Abdul Kadar",
     count: 25,
-    description: "A business-focused branch with successful entrepreneurs and professionals in various industries.",
+    description: "Business-focused branch with successful entrepreneurs in various industries.",
     highlights: ["Business", "Entrepreneurship", "Industry"],
     icon: "fas fa-chart-line",
     color: "#ff6600",
@@ -757,7 +786,7 @@ const BRANCH_INFO = {
   10: {
     name: "A T Ibrahim Kutty & Zohra Ibrahim",
     count: 16,
-    description: "A professional branch with members in law, medicine, and international business.",
+    description: "Professional branch with members in law, medicine, and international business.",
     highlights: ["Law", "Medicine", "International"],
     icon: "fas fa-globe",
     color: "#66ff00",
@@ -774,25 +803,25 @@ const GENERATION_INFO = {
   },
   2: {
     title: "Generation 2 - The Builders",
-    description: "The first generation of descendants who expanded and built the family foundation",
+    description: "The first generation who expanded and built the family foundation",
     icon: "fas fa-users",
     color: "#00f5ff",
   },
   3: {
     title: "Generation 3 - The Achievers",
-    description: "The expanding generation with diverse professions and remarkable achievements",
+    description: "The expanding generation with diverse professions and achievements",
     icon: "fas fa-user-friends",
     color: "#8338ec",
   },
   4: {
     title: "Generation 4 - The Innovators",
-    description: "The new generation carrying forward the family legacy with innovation",
+    description: "The new generation carrying forward the family legacy",
     icon: "fas fa-baby",
     color: "#00ff88",
   },
   5: {
     title: "Generation 5 - The Future",
-    description: "The youngest members who represent the future of our family",
+    description: "The youngest members representing the future",
     icon: "fas fa-child",
     color: "#ffaa00",
   },
@@ -837,10 +866,6 @@ function getMembersByGeneration(generation) {
   return FAMILY_DATABASE.filter((member) => member.generation === generation)
 }
 
-function getMembersByProfession(profession) {
-  return FAMILY_DATABASE.filter((member) => member.profession.toLowerCase().includes(profession.toLowerCase()))
-}
-
 function getLocationFromContact(contact) {
   if (!contact || contact === "NA") return "Unknown"
 
@@ -864,17 +889,12 @@ function getProfessionCategory(profession) {
 function formatPhoneNumber(contact) {
   if (!contact || contact === "NA") return "Not available"
 
-  // Format international numbers
   if (contact.startsWith("00")) {
     const cleaned = contact.replace(/^00/, "+")
     return cleaned.replace(/(\+\d{2,3})(\d{2})(\d{7,8})/, "$1 $2 $3")
   }
 
   return contact
-}
-
-function getGenderIcon(gender) {
-  return gender === "male" ? "fas fa-male" : "fas fa-female"
 }
 
 function getProfessionIcon(profession) {
@@ -905,11 +925,9 @@ function getProfessionIcon(profession) {
   return "fas fa-user"
 }
 
-// ===== SEARCH FUNCTIONS =====
 function searchMembers(query, filters = {}) {
   let results = [...FAMILY_DATABASE]
 
-  // Apply text search
   if (query && query.trim()) {
     const searchTerm = query.toLowerCase().trim()
     results = results.filter(
@@ -923,17 +941,14 @@ function searchMembers(query, filters = {}) {
     )
   }
 
-  // Apply branch filter
   if (filters.branch) {
     results = results.filter((member) => member.branch === filters.branch)
   }
 
-  // Apply profession filter
   if (filters.profession) {
     results = results.filter((member) => member.profession.toLowerCase().includes(filters.profession.toLowerCase()))
   }
 
-  // Apply generation filter
   if (filters.generation) {
     results = results.filter((member) => member.generation === Number.parseInt(filters.generation))
   }
@@ -941,65 +956,36 @@ function searchMembers(query, filters = {}) {
   return results
 }
 
-function getSearchSuggestions() {
-  const suggestions = [
-    { term: "Doctor", icon: "fas fa-user-md", type: "profession" },
-    { term: "Engineer", icon: "fas fa-cogs", type: "profession" },
-    { term: "Business", icon: "fas fa-briefcase", type: "profession" },
-    { term: "Teacher", icon: "fas fa-chalkboard-teacher", type: "profession" },
-    { term: "Lawyer", icon: "fas fa-balance-scale", type: "profession" },
-    { term: "UAE", icon: "fas fa-map-marker-alt", type: "location" },
-    { term: "Qatar", icon: "fas fa-globe", type: "location" },
-    { term: "India", icon: "fas fa-map-marker-alt", type: "location" },
-  ]
-
-  return suggestions
-}
-
-// ===== STATISTICS FUNCTIONS =====
 function getFamilyStatistics() {
   const stats = {
     totalMembers: FAMILY_DATABASE.length,
     totalBranches: Object.keys(BRANCH_INFO).length,
     totalGenerations: Math.max(...FAMILY_DATABASE.map((m) => m.generation)),
-    totalCountries: new Set(FAMILY_DATABASE.map((m) => getLocationFromContact(m.contact))).size,
+    totalCountries: new Set(
+      FAMILY_DATABASE.map((m) => getLocationFromContact(m.contact)).filter((l) => l !== "Unknown"),
+    ).size,
 
-    // Branch distribution
     branchDistribution: {},
-
-    // Generation distribution
     generationDistribution: {},
-
-    // Profession distribution
     professionDistribution: {},
-
-    // Location distribution
     locationDistribution: {},
-
-    // Gender distribution
     genderDistribution: { male: 0, female: 0 },
   }
 
-  // Calculate distributions
   FAMILY_DATABASE.forEach((member) => {
-    // Branch distribution
     const branchName = getBranchById(member.branchId)?.name || member.branch
     stats.branchDistribution[branchName] = (stats.branchDistribution[branchName] || 0) + 1
 
-    // Generation distribution
     stats.generationDistribution[member.generation] = (stats.generationDistribution[member.generation] || 0) + 1
 
-    // Profession distribution
     const professionCategory = getProfessionCategory(member.profession)
     stats.professionDistribution[professionCategory] = (stats.professionDistribution[professionCategory] || 0) + 1
 
-    // Location distribution
     const location = getLocationFromContact(member.contact)
     if (location !== "Unknown") {
       stats.locationDistribution[location] = (stats.locationDistribution[location] || 0) + 1
     }
 
-    // Gender distribution
     if (member.gender) {
       stats.genderDistribution[member.gender]++
     }
@@ -1019,14 +1005,11 @@ if (typeof module !== "undefined" && module.exports) {
     getBranchById,
     getMembersByBranch,
     getMembersByGeneration,
-    getMembersByProfession,
     getLocationFromContact,
     getProfessionCategory,
     formatPhoneNumber,
-    getGenderIcon,
     getProfessionIcon,
     searchMembers,
-    getSearchSuggestions,
     getFamilyStatistics,
   }
 }

@@ -415,67 +415,7 @@ document.addEventListener("keydown", (event) => {
     event.preventDefault()
     window.location.href = "search.html"
   }
-
-  // Escape: Close any open modals
-  if (event.key === "Escape") {
-    const openModals = document.querySelectorAll(".modal.show")
-    openModals.forEach((modal) => {
-      modal.classList.remove("show")
-    })
-    document.body.style.overflow = "auto"
-  }
 })
-
-// ===== ERROR HANDLING =====
-window.addEventListener("error", (event) => {
-  console.error("Application error:", event.error)
-
-  // Show user-friendly error message
-  const errorContainer = document.createElement("div")
-  errorContainer.className = "error-notification"
-  errorContainer.innerHTML = `
-        <div class="error-content">
-            <i class="fas fa-exclamation-triangle"></i>
-            <span>Something went wrong. Please refresh the page.</span>
-            <button onclick="this.parentElement.parentElement.remove()">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-    `
-
-  document.body.appendChild(errorContainer)
-
-  // Auto-remove after 5 seconds
-  setTimeout(() => {
-    if (errorContainer.parentElement) {
-      errorContainer.remove()
-    }
-  }, 5000)
-})
-
-// ===== PERFORMANCE MONITORING =====
-if ("performance" in window) {
-  window.addEventListener("load", () => {
-    requestIdleCallback(() => {
-      const perfData = performance.getEntriesByType("navigation")[0]
-      console.log("Page load time:", perfData.loadEventEnd - perfData.loadEventStart, "ms")
-    })
-  })
-}
-
-// ===== SERVICE WORKER REGISTRATION =====
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker
-      .register("/sw.js")
-      .then((registration) => {
-        console.log("SW registered: ", registration)
-      })
-      .catch((registrationError) => {
-        console.log("SW registration failed: ", registrationError)
-      })
-  })
-}
 
 // ===== HELPER FUNCTIONS =====
 
@@ -483,7 +423,7 @@ function throttle(func, limit) {
   let inThrottle
   return function () {
     const args = arguments
-    
+
     if (!inThrottle) {
       func.apply(this, args)
       inThrottle = true
@@ -528,15 +468,66 @@ function isTablet() {
   return window.innerWidth > 768 && window.innerWidth <= 1024
 }
 
+// Branch information - this should be available globally
 const BRANCH_INFO = {
-  1: { name: "Branch 1", count: 100, icon: "fas fa-users", highlights: ["Highlight 1", "Highlight 2"] },
-  2: { name: "Branch 2", count: 200, icon: "fas fa-tree", highlights: ["Highlight 3", "Highlight 4"] },
-  3: { name: "Branch 3", count: 150, icon: "fas fa-crown", highlights: ["Highlight 5", "Highlight 6"] },
-  4: { name: "Branch 4", count: 300, icon: "fas fa-mosque", highlights: ["Highlight 7", "Highlight 8"] },
-  5: { name: "Branch 5", count: 250, icon: "fas fa-handshake", highlights: ["Highlight 9", "Highlight 10"] },
-  6: { name: "Branch 6", count: 400, icon: "fas fa-graduation-cap", highlights: ["Highlight 11", "Highlight 12"] },
-  7: { name: "Branch 7", count: 350, icon: "fas fa-lightbulb", highlights: ["Highlight 13", "Highlight 14"] },
-  8: { name: "Branch 8", count: 500, icon: "fas fa-microscope", highlights: ["Highlight 15", "Highlight 16"] },
-  9: { name: "Branch 9", count: 450, icon: "fas fa-chart-line", highlights: ["Highlight 17", "Highlight 18"] },
-  10: { name: "Branch 10", count: 600, icon: "fas fa-globe", highlights: ["Highlight 19", "Highlight 20"] },
+  1: {
+    name: "A T Mohamed unny & P.M Kochu Rabiya",
+    count: 23,
+    icon: "fas fa-crown",
+    highlights: ["Educators", "Professionals", "International"],
+  },
+  2: {
+    name: "A T kunjupathumma & P.K Athakutty",
+    count: 147,
+    icon: "fas fa-tree",
+    highlights: ["Doctors", "Engineers", "Business"],
+  },
+  3: {
+    name: "A T Pathavu & Veetiparambil Avvutty",
+    count: 50,
+    icon: "fas fa-users",
+    highlights: ["UAE Based", "Business", "Technology"],
+  },
+  4: {
+    name: "A T Nafeesakutty & M.A Bappu Moulavi",
+    count: 39,
+    icon: "fas fa-mosque",
+    highlights: ["Education", "Engineering", "Healthcare"],
+  },
+  5: {
+    name: "A.T AliKunji & P.K Kunhipathunni",
+    count: 22,
+    icon: "fas fa-handshake",
+    highlights: ["Business", "Management", "Qatar"],
+  },
+  6: {
+    name: "A.T Kunjaisu & R.V Mohammed Haji",
+    count: 52,
+    icon: "fas fa-graduation-cap",
+    highlights: ["Medicine", "Engineering", "Education"],
+  },
+  7: {
+    name: "A.T Aminakutty & A.M Bavu",
+    count: 29,
+    icon: "fas fa-lightbulb",
+    highlights: ["Media", "Architecture", "Innovation"],
+  },
+  8: {
+    name: "A T Aboobakker & Rasiya .P.N",
+    count: 18,
+    icon: "fas fa-microscope",
+    highlights: ["Research", "Academia", "Science"],
+  },
+  9: {
+    name: "A.T Zainba & Abdul Kadar",
+    count: 25,
+    icon: "fas fa-chart-line",
+    highlights: ["Business", "Entrepreneurship", "Industry"],
+  },
+  10: {
+    name: "A T Ibrahim Kutty & Zohra Ibrahim",
+    count: 16,
+    icon: "fas fa-globe",
+    highlights: ["Law", "Medicine", "International"],
+  },
 }
